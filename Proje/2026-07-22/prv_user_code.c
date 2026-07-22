@@ -5,7 +5,7 @@
 #include "button.h"
 
 void PRV_USER_Code(void) {
-    // Modüller
+
     LED_Init();
     Button_Init();
 
@@ -15,11 +15,11 @@ void PRV_USER_Code(void) {
     bool dir_forward = true;
 
     // Hız Kademeleri
-    const uint32_t SPEED_FAST = 120;   // Hızlı
-    const uint32_t SPEED_MEDIUM = 350; // İstediğin o hafif yavaşlatılmış ideal base hız
-    const uint32_t SPEED_SLOW = 750;   // Yavaş
+    const uint32_t SPEED_FAST = 120;
+    const uint32_t SPEED_MEDIUM = 350;
+    const uint32_t SPEED_SLOW = 750;
 
-    uint32_t current_speed = SPEED_MEDIUM; // Başlangıç hızı orta kademe
+    uint32_t current_speed = SPEED_MEDIUM; // Başlangıç hızı
 
     // İlk LED'i yak
     LED_UpdateChase(active_led);
@@ -41,7 +41,7 @@ void PRV_USER_Code(void) {
                 current_speed = SPEED_MEDIUM;
             }
 
-            // Debounce (Ark Önleme)
+            // Debounce
             for (volatile uint32_t d = 0; d < 150; d++);
             exti_button_flag = false;
         }
