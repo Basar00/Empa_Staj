@@ -8,19 +8,14 @@ void Button_ISR_Handler(uint32_t status, void *context) {
     (void)status;
     (void)context;
 
-    // 1. Sinyal (Bayrak) Kaldır
+    //SinyalKaldır
     exti_button_flag = true;
-
-    // 2. KESME BAYRAĞINI TEMİZLE (Kilitlenmeyi Önler!)
-    // ABOV HAL kütüphanesinde EXTI bayrağını temizleyen kodu buraya eklemelisin.
-    // Eğer HAL kendi temizliyorsa bu adıma gerek yok, ama takılıyorsa sebep budur.
-    // Örnek: HAL_PCU_ClearInterruptFlag(BTN_PORT, BTN_PIN);
 }
 
 void Button_Init(void) {
     HAL_PCU_SetInOutMode(BTN_PORT, BTN_PIN, PCU_INOUT_INPUT);
 
-    // Sadece basıldığı an (Düşen Kenar)
+    // Falling edge
     HAL_PCU_SetIntrPort(BTN_PORT, BTN_PIN, PCU_INTR_MODE_EDGE, PCU_INTR_TRG_LOW_FALLING, 0);
 
     PCU_IRQ_CFG_t irq_cfg = {0};
