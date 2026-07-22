@@ -1,7 +1,7 @@
 #include "led.h"
 
 void LED_Init(void) {
-    // 3 LED'i de Çıkış (Output) yap
+    //3ledli Output
     HAL_PCU_SetInOutMode(LED1_PORT, LED1_PIN, PCU_INOUT_OUTPUT_PUSH_PULL);
     HAL_PCU_SetInOutMode(LED2_PORT, LED2_PIN, PCU_INOUT_OUTPUT_PUSH_PULL);
     HAL_PCU_SetInOutMode(LED3_PORT, LED3_PIN, PCU_INOUT_OUTPUT_PUSH_PULL);
@@ -11,7 +11,7 @@ void LED_Init(void) {
 }
 
 void LED_UpdateChase(uint8_t active_index) {
-    // Sadece sırası gelen LED'i LOW(0) yapıp yakar, diğerlerini HIGH(1) yapıp söndürür
+    // Sadece sırası gelen LED'i yak
     HAL_PCU_SetOutputValue(LED1_PORT, LED1_PIN, (active_index == 0) ? PCU_PORT_LOW : PCU_PORT_HIGH);
     HAL_PCU_SetOutputValue(LED2_PORT, LED2_PIN, (active_index == 1) ? PCU_PORT_LOW : PCU_PORT_HIGH);
     HAL_PCU_SetOutputValue(LED3_PORT, LED3_PIN, (active_index == 2) ? PCU_PORT_LOW : PCU_PORT_HIGH);
