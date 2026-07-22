@@ -3,7 +3,7 @@
 // Volatile kesme bayrağı
 volatile bool exti_button_flag = false;
 
-// ISR (Kesme İşleyicisi)
+// ISR
 void Button_ISR_Handler(uint32_t status, void *context) {
     (void)status;
     (void)context;
