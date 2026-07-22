@@ -8,7 +8,6 @@
 #define BTN_PORT PCU_ID_C
 #define BTN_PIN  PCU_PIN_ID_9
 
-// Main tarafında bu bayrağa ulaşabilmek için extern yapıyoruz
 extern volatile bool exti_button_flag;
 
 void Button_Init(void);
