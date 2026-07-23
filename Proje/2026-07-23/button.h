@@ -9,7 +9,8 @@ typedef enum {
     NO_PRESS = 0,
     SHORT_PRESS,
     LONG_PRESS
-} ButtonEvent_e;
+}
+ButtonEvent_e;
 
 void Button_Init(void);
 ButtonEvent_e Button_Check(void);
