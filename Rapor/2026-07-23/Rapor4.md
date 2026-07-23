@@ -26,6 +26,9 @@
 | Orta | ☑ |
 | Zor | ☑ |
 
+## Zor Görev ##
+https://github.com/Basar00/Empa_Staj/tree/8dd25fc9fe770cd0575f8104ad14f58b16cd6019/Proje/2026-07-23
+
 ## Takıldığım yer
 
 - Bazı kütüphane ve delay sorunları.
