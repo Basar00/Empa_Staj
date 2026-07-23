@@ -10,7 +10,7 @@ ButtonEvent_e Button_Check(void) {
     bool is_pressed = (btn_val == 0);
 
     if (is_pressed) {
-        // Basılı tutulduğu süreyi sayma
+        // Basılı tutulduğu süreyi say
         uint32_t press_duration = 0;
 
         while (is_pressed) {
