@@ -7,9 +7,9 @@ void Button_Init(void) {
 }
 
 ButtonEvent_e Button_Check(void) {
-    PCU_PORT_e btn_val;
-    HAL_PCU_GetInputValue(PCU_ID_C, PCU_PIN_ID_9, &btn_val);
-    bool basildi = (btn_val == 0);
+    PCU_PORT_e buton;
+    HAL_PCU_GetInputValue(PCU_ID_C, PCU_PIN_ID_9, &buton);
+    bool basildi = (buton == 0);
 
     if (basildi) {
         // Basılı tutulduğu süreyi sayma
@@ -19,18 +19,18 @@ ButtonEvent_e Button_Check(void) {
             basma_suresi++;
             for(volatile uint32_t d = 0; d < 100; d++);
 
-            HAL_PCU_GetInputValue(PCU_ID_C, PCU_PIN_ID_9, &btn_val);
-            basildi = (btn_val == 0);
+            HAL_PCU_GetInputValue(PCU_ID_C, PCU_PIN_ID_9, &buton);
+            basildi = (buton == 0);
 
             // Uzun basma
             if (basma_suresi > 200) {
                 // Debounce
-                while(btn_val == 0) {
+                while(buton == 0) {
                 	Led_FlashAll();
 
                     for(volatile uint32_t d = 0; d < 8000; d++);
 
-                    HAL_PCU_GetInputValue(PCU_ID_C, PCU_PIN_ID_9, &btn_val);
+                    HAL_PCU_GetInputValue(PCU_ID_C, PCU_PIN_ID_9, &buton);
                 }
                 return LONG_PRESS;
             }
