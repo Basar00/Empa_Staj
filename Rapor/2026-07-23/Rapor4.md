@@ -40,11 +40,11 @@ https://github.com/Basar00/Empa_Staj/tree/8dd25fc9fe770cd0575f8104ad14f58b16cd60
 
 ## Teorik Sorular
 
-1. # FOR
+1. *FOR*
 - Led_Init(), Led_SelfTest(), volatile (gecikme döngüsü için) ve button.c (press duration kısmında) fonksiyonlarında kullandım. 
 - 3 led vardı 13 - 14 - 15
 
-2. # If
+2. *If*
 - Buton algılama işlemi için-> butona basıldığında "basildi == true" ve while döngüsü içinde "basma_suresi" sayacını arttırarak basıl kalma süresini ayarlandım.
 
 Mod-Yön
@@ -64,7 +64,7 @@ if (event == SHORT_PRESS) {
 
 
 
-3. # CONST
+3. *CONST*
 -  const uint32_t Yavas_Chase = 1650;
    const uint32_t Hizli_Chase = 250;
    gibi kullanımda değişkenin değeri hiçbir zaman değişmez.(ROM da saklanır.)
@@ -73,5 +73,5 @@ if (event == SHORT_PRESS) {
 uint8_t active_index = 0; 
 gibi değişkenler ise RAM de tutulur. Bunlar anlık olarak güncellenir.
 
-4. # Kesme/Debounce
+4. *Kesme/Debounce*
 - Debounce seçtim daha pratik gözüktü.
