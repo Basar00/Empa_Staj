@@ -20,7 +20,7 @@
 **Kavramlar**
 - enum
 - switch - case
-
+- mod
 
 ## Görev durumu
 
