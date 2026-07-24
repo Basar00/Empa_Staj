@@ -13,9 +13,9 @@
 
 ## C özeti
 
-for → …
-while → …
-if → …
-switch → …
-const → …
-volatile → … 
+| for → …
+| while → …
+| if → …
+| switch → …
+| const → …
+| volatile → … 
