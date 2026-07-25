@@ -41,10 +41,15 @@ https://github.com/Basar00/Empa_Staj/tree/4055e9c5b63e4b1bfdaf9b59d720273f363648
 
 ## C özeti
 for → Led_Init, Led_SelfTest ve Led_ChaseStep içinde LED pin dizisini taramak ve gecikme üretmek için.
+
 while → Sonsuz döngüsü ve butonun basılı kalma süresini saymak için.
+
 if → Buton basış durumlarını ve yön/hız kontrol bayraklarını denetlemek için.
+
 switch → app_mode değişkenine bakarak modların arasında geçiş yapmak için.
+
 const → 'CHASE' gibi sabit gecikme/hız değerlerini tutmak için.
+
 volatile → Döngü tabanlı gecikmelerin derleyici optimizasyonuna takılmasını engellemek için.
 
 
