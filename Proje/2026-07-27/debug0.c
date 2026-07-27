@@ -6,7 +6,6 @@
 
 void My_Debug_Init(void)
 {
-    // MCUBrew32 başlatmayı ürettiği için burası boş kalabilir
 }
 
 void My_Debug_Print(const char *text)
