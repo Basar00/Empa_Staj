@@ -104,4 +104,4 @@ Pil seviyesi çok yavaş değiştiğinden belirli aralıklarla bakmak güç aç�
 10. Çözünürlük artınca hassasiyet nasıl değişir? Hız genelde nasıl etkilenir?
 - Hassasiyet: Artar. Çözünürlük bit değeri arttıkça LSB küçülür.
 
-Hız: Genelde yavaşlar. Çözürünürlük için devrelerin daha fazla örnekleme ve yerleşme süresine ihtiyaç duymasına yol açar ve saniyedeki MSPS azaltır.
+- Hız: Genelde yavaşlar. Çözürünürlük için devrelerin daha fazla örnekleme ve yerleşme süresine ihtiyaç duymasına yol açar ve saniyedeki MSPS azaltır.
