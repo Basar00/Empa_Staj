@@ -8,7 +8,7 @@
 
 ## Bugün ne yaptım?
 
-- 
+- ABOV A34G43x mikrodenetleyicisi üzerinde ADC kanal yapılandırması, ham veriyi (raw) milivolta (mV) dönüştüren sistem.
 
 
 ## Görev durumu
