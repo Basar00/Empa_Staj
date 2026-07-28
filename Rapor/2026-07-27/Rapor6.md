@@ -8,7 +8,9 @@
 
 ## Bugün ne yaptım?
 
-- 
+- Debug UART (UART10) modülünü ve ilgili TX (PC15) ile RX (PC14) pinlerini tespit etme.
+- UART peripheral yapılandırmasını 115200 baud rate ve 8N1 (8 data bit, no parity, 1 stop bit) formatına uygun olarak tanımlama
+- debugging
 
 ## Görev durumu
 
@@ -20,11 +22,8 @@
 
 ## Takıldığım yer
 
-- 
+- Herhangi bir sorunla karşılaşmadım.
 
-## Yarın
-
-- 
 
 ### Debug UART Tablosu
 
