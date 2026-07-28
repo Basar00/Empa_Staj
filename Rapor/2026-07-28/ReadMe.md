@@ -1,0 +1,1 @@
+Pil voltajı okuma
