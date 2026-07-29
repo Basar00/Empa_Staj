@@ -54,7 +54,7 @@ uint8_t value = 0x08;
 
 value ^= (1 << 3);
 
-- 3. biti reverselenir, sonuç 0 olur 
+- 3 . biti reverselenir, sonuç 0 olur 
 
 
 *6.* Maskeleme (bit masking) nedir? Neden kullanılır?
