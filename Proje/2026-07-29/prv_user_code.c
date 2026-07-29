@@ -29,7 +29,6 @@ void PRV_USER_Code(void)
     PRV_SCU_CLK_Init();
         My_Debug_Init();
 
-
     My_Debug_Print("\r\n---------------------------------------\r\n");
 
     sprintf(buffer, "Initial Register = 0x%02X\r\n", control_reg);
@@ -64,6 +63,5 @@ void PRV_USER_Code(void)
     My_Debug_Print("---------------------------------------\r\n");
 
     while(1){
-
     }
 }
