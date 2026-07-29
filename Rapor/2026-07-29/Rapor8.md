@@ -45,7 +45,7 @@ value |= (1 << 3);
 
 value &= ~(1 << 5);
 
-- 5. biti temizler.
+- 5 . biti temizler.
 
 
 *5.* Aşağıdaki işlemin sonucu nedir?
