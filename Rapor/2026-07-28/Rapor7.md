@@ -13,11 +13,7 @@
 
 ## Görev durumu
 
-| Seviye | Yapıldı |
-|--------|---------|
-| Kolay | ☑ |
-| Orta | ☑ |
-| Zor | ☑ |
+Her şey tam yapıldı.
 
 ## Takıldığım yer
 
@@ -45,7 +41,7 @@
 | Max giriş voltajı? | AVDD |
 
 
-## Teorik sorular (cevapları rapora yaz)
+## Teorik sorular
 
 *1.* ADC açılımı nedir? Analog sinyali neden doğrudan mikrodenetleyici işleyemez?
 - ADC = Analog to Digital Converter 
