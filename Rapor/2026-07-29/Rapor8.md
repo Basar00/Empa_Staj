@@ -16,7 +16,7 @@ Her şey tam yapıldı.
 
 ## Takıldığım yer
 
-- veri aktarımında bZI parazitler/kararsızlıklar yaşandı
+- veri aktarımında bazI parazitler/kararsızlıklar yaşandı
 - printf problemleri
 
 
