@@ -1,0 +1,1 @@
+Mikrofon, RMS, ses seviyesi
