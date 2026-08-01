@@ -1,4 +1,4 @@
-Yeah yeah yeah# Günlük Rapor — Gün 08
+# Günlük Rapor — Gün 08
 
 ## Bugün ne yaptım?
 

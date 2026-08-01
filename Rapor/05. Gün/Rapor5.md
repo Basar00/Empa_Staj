@@ -2,8 +2,13 @@
 
 ## Bugün ne yaptım?
 
-- SysTick Timer ve donanımsal zamanlayıcı (Timer) birimlerinin yapılandırılması.
-- PWM (Pulse Width Modulation) sinyali üretilerek LED parlaklığının kontrol edilmesi.
+- Dün yaptığımız projenin üstüne koyarak daha farklı ve kapsamlı olmasını sağladım. 
+
+- Programın modlarını yönetmek için enum ile SLOW, FAST ve PAUSE durumları oluşturdum, ana döngüyü de switch-case yapısına bağladım.
+
+- Karışıklığı önlemek için LED ve buton kısımlarını ayrı dosyalara ayırdım (led.c, button.c).
+
+- Kısa basışta yön ve hız değişimi, uzun basışta ise sistemin durup ışıkların sönmesini ayarladım.
 
 ## Görev durumu
 
@@ -11,21 +16,18 @@ Her şey tam yapıldı.
 
 ## Takıldığım yer
 
-- PWM sinyalinin frekansı ile görev döngüsünün (Duty Cycle) zamanlayıcı bölücü (Prescaler) hesaplamaları.
+- Pek bir sıkıntı yaşamdım. Bazı ledlerde gürültü, delay sorunu vardı sadece. Basit debounce sistemiyle çözüldü.
 
-## Teorik sorular
 
-*1.* PWM (Pulse Width Modulation) nedir?
-- Dijital bir sinyalin belirli bir frekansta lojik 1 ve lojik 0 kalma sürelerinin oranlanması ile ortalama bir analog gerilim seviyesi elde etme yöntemidir.
+## C özeti
+`for` → `Led_Init`, `Led_SelfTest` ve `Led_ChaseStep` içinde LED pin dizisini taramak ve gecikme üretmek için.
 
-*2.* Duty Cycle (Görev Döngüsü) neyi ifade eder?
-- Bir periyodik sinyalin aktif (lojik 1) kaldığı sürenin, toplam sinyal periyoduna yüzdesel oranıdır.
+`while` → Sonsuz döngüsü ve butonun basılı kalma süresini saymak için.
 
-*3.* Prescaler (Ön Bölücü) nedir?
-- Mikrodenetleyicinin ana saat sinyalini bölen ve zamanlayıcının daha düşük frekanslarda veya daha uzun periyotlarda saymasını sağlayan donanımsal bölücüdür.
+`if` → Buton basış durumlarını ve yön/hız kontrol bayraklarını denetlemek için.
 
-*4.* SysTick Timer mikrodenetleyicilerde ne amaçla kullanılır?
-- Genellikle gerçek zamanlı işletim sistemlerinde (RTOS) zaman dilimleme (time-slicing) için veya sistem genelinde hassas milisaniyelik gecikmeler üretmek için kullanılan standart ARM Cortex çekirdek zamanlayıcısıdır.
+`switch` → `app_mode` değişkenine bakarak modların arasında geçiş yapmak için.
 
-*5.* PWM frekansı neden LED sürme uygulamalarında önemlidir?
-- Frekans insan gözünün algılama sınırının (yaklaşık 50-60 Hz) altında olursa LED'de titreme (flicker) görülür; bu yüzden genellikle 100 Hz ve üzerinde seçilir.
+`const` → `CHASE` gibi sabit gecikme/hız değerlerini tutmak için.
+
+`volatile` → Döngü tabanlı gecikmelerin derleyici optimizasyonuna takılmasını engellemek için.

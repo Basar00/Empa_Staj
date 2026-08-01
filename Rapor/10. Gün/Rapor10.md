@@ -21,7 +21,7 @@ Her şey tam yapıldı.
 
 *2.* 1 kHz sinüs için teorik minimum örnekleme frekansı (Nyquist) nedir? Pratikte neden daha yüksek isteriz?
 - Nyquist teoremi -  min fs > 2f => 2000 Hz
-- Pratikte sinüs eğrisini pürüzsüz görebilmek ve tepe/dip noktalarını kaçırmamak için en az 8-10 kHz örnekleme hızı tercih edilir.
+- Sinüs eğrisini pürüzsüz görebilmek ve peak/dip noktalarını kaçırmamak için en az 8-10 kHz örnekleme hızı tercih edilir.
 
 *3.* Örnekleme çok yavaş olursa grafikte ne görürsün?
 - Aliasing olur ve 1 kHz sinüs dalgası çok daha düşük frekanslı, kırık ve rastgele hatalı bir dalga gibi çizilir.
@@ -49,4 +49,4 @@ Her şey tam yapıldı.
 
 *10.* Canlı grafikte gördüğün “sinüs” neden laboratuvar osiloskopundaki kadar temiz olmayabilir? (en az 2 sebep)
 - Yazılımsal döngü gecikmeleri ve UART iletim darboğazı nedeniyle osiloskoplar gibi MHz seviyesinde tam sabit zamanlı örnekleme yapılamaması.
-- reverb, noise ve parazitlerin analog sinyale binmesi.
+- Reverb, noise ve parazitlerin analog sinyale binmesi.

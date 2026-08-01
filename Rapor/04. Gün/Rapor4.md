@@ -2,8 +2,9 @@
 
 ## Bugün ne yaptım?
 
-- GPIO pinlerinin Giriş (Input) modunda ayarlanması ve harici buton durumunun okunması.
-- Mekanik buton sıçramalarının (Contact Bounce) yazılımsal Debounce algoritması ile filtrelenmesi.
+- Açılışta 3 adet ledin sırayla yanıp sönmesini sağlayan self-test mekanizmasını yazdım.
+- Buton okuma işlemine debounce ekleyerek mekanik titremeleri engellendi ve süre sayımıyla kısa/uzun basış ayrımı yaptım.
+- Kısa basışta chase yönünü tersine çeviren, uzun basışta ise çalışma hızını değiştiren ve `if-else` ile entegre yaptım.  
 
 ## Görev durumu
 
@@ -11,22 +12,42 @@ Her şey tam yapıldı.
 
 ## Takıldığım yer
 
-- Butona basıldığında oluşan parazit sinyallerin yanlış veya birden fazla tetikleme üretmesi.
+- Bazı kütüphane ve delay sorunları.
 
-## Teorik sorular
 
-*1.* Contact Bounce (Buton Sıçraması) nedir?
-- Mekanik butonlara basıldığında veya bırakıldığında kontakların milisaniyeler içinde defalarca açılıp kapanması sonucu oluşan pasif sinyal dalgalanmasıdır.
+## Teorik Sorular
 
-*2.* Debounce işlemi yazılımsal olarak nasıl gerçekleştirilir?
-- İlk sinyal değişiminden sonra buton durumunu doğrulamak için kısa bir bekleme süresi (örneğin 10-20 ms) verilir ve pin durumu tekrar okunur.
+1. *FOR*
+- Led_Init(), Led_SelfTest(), volatile (gecikme döngüsü için) ve button.c (press duration kısmında) fonksiyonlarında kullandım. 
+- 3 led vardı 13 - 14 - 15
 
-*3.* Polling (Sürekli Sorgulama) yöntemi ile Interrupt (Kesme) yönteminin farkı nedir?
-- Polling yönteminde işlemci döngü içerisinde sürekli pinin durumunu kontrol eder, CPU zamanı harcar.
-- Interrupt yönteminde ise işlemci normal işine devam eder; donanımsal bir olay (örneğin buton basımı) gerçekleştiğinde kesme tetiklenir ve alt program çalıştırılır.
+2. *If*
+- Buton algılama işlemi için-> butona basıldığında "basildi == true" ve while döngüsü içinde "basma_suresi" sayacını arttırarak basıl kalma süresini ayarlandım.
 
-*4.* Edge-triggered (Kenar Tetiklemeli) kesme ne demektir?
-- Sinyalin seviyesinde (0 veya 1) değil, sadece seviye geçiş anlarında (yükselen kenar / düşen kenar) kesme üretilmesidir.
+Mod-Yön
+- Kısa basış istiyorsak (SHORT_PRESS) reverse==reverse! diyerek akışı terse çeviriyoruz.
+- Uzun ise (LONG_PRESS) else if (event == LONG_PRESS)
 
-*5.* Schmitt Trigger giriş yapısı ne işe yarar?
-- Gürültülü veya yavaş değişen analog/dijital sinyallerde alt ve üst eşik voltaj değerleri (histerezis) oluşturarak net ve kararlı bir dijital çıkış elde edilmesini sağlar.
+"
+if (event == SHORT_PRESS) {
+    reverse = !reverse;
+}
+    else if (event == LONG_PRESS) {
+        if (current_delay == Yavas_Chase) {
+            current_delay = Hizli_Chase;
+}   else {
+         current_delay = Yavas_Chase;
+}}"
+
+
+3. *CONST*
+-  const uint32_t Yavas_Chase = 1650;
+   const uint32_t Hizli_Chase = 250;
+   gibi kullanımda değişkenin değeri hiçbir zaman değişmez.(ROM da saklanır.)
+
+- bool reverse = false;
+uint8_t active_index = 0; 
+gibi değişkenler ise RAM de tutulur. Bunlar anlık olarak güncellenir.
+
+4. *Kesme/Debounce*
+- Debounce seçtim daha pratik gözüktü.
