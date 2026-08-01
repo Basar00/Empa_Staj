@@ -37,7 +37,8 @@
 - Ses oluştuğunda ses dalgası bu bias çizgisinin üstüne ve altına salınım yaptığı için ADC değerleri sürekli değişir.
 
 *7.* Sampling (örnekleme) nedir? ADC için neden önemlidir?
-- Sürekli olan analog sinyalden belirli zaman aralıklarında anlık numune (değer) alma işlemidir. Sinyaldeki değişimi ve dalga şeklini doğru yakalayabilmek için önemlidir.
+- Sürekli olan analog sinyalden belirli zaman aralıklarında anlık değer alma işlemidir.
+- Sinyaldeki değişimi ve dalga şeklini doğru yakalayabilmek için önemlidir.
 
 *8.* Sampling frekansı düşük olursa ses sinyalinde ne gibi problemler oluşabilir?
 - Aliasing oluşur. Sesin ani piki kaçabilir, yüksek frekanslı sesler grafikte yanlış ve bozuk şekilde görünür.
