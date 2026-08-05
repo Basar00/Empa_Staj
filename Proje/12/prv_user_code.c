@@ -5,7 +5,6 @@
 #include "sht4x_i2c.h"
 #include "sensirion_i2c_hal.h"
 #include "led.h"
-#include "button.h"
 
 extern void My_Debug_Print(const char *str);
 
