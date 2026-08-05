@@ -1,0 +1,16 @@
+# Günlük Rapor — Gün 13
+
+## Bugün ne yaptım?
+- 
+
+
+## Görev durumu
+
+Her şey tam yapıldı. (+Bonuslar da yapıldı.)
+
+## Takıldığım yer
+- 
+
+
+## Teorik sorular
+İvmeölçer ne ölçer? Kart düz ve sabitken neden bir eksen ≈ ±1 g civarında görünür?Cevap: Birim zamandaki hız değişimini (ivmeyi) ölçer. Kart sabit durduğunda üzerinde yerçekimi ivmesi ($g \approx 9.81\text{ m/s}^2$) etki eder. Kartın yere paralel duruşuna bağlı olarak yerçekimi vektörü hangi eksene dik etki ediyorsa (genelde Z ekseni), o eksen $\approx \pm 1\text{ g}$ olarak okunur; diğer eksenler ise $0\text{ g}$ civarında olur.LIS2DE12’nin tipik 7-bit I2C adresleri nelerdir? SA0 / SDO neden iki adres üretir?Cevap: Tipik adresleri 0x18 ve 0x19'dur. Çipin SA0/SDO pini donanımsal olarak GND'ye (0) çekildiyse en anlamlı 7. bitin son basamağı sıfırlanarak adres 0x18 olur; VDD'ye (1) çekildiyse 0x19 olur. Bu özellik, aynı I2C veriyoluna iki farklı LIS2DE12 çipi bağlamayı mümkün kılar.WHO_AM_I register’ı ne işe yarar? Beklenen değer nedir?Cevap: Çipin üretimden atanmış sabit kimlik numarasını tutar (0x0F adresindedir). Haberleşmenin doğru cihazla ve problemsiz kurulduğunu kanıtlamak için okunur. Beklenen değer 0x33'tür.Power-up sonrası sadece OUT_X okumak neden çoğu zaman yetmez? CTRL / ODR’nin rolü nedir?Cevap: Sensörler açılışta güç tüketimini sıfıra indirmek için varsayılan olarak "Power-Down" (uyku) modunda (ODR = 0) başlar ve ölçüm yapmazlar. CTRL_REG1 register'ına yazarak ODR (Output Data Rate) değerini seçmek ve X/Y/Z eksen okumalarını etkinleştirmek (enable) gerekir.OUT_* değerini uint8_t yerine int8_t olarak yorumlamak neden önemli?Cevap: İvme hem pozitif hem negatif yönde olabileceği için register çıktısı İkinin Tümleyeni (Two's Complement) formatında işaretli 8-bit bir sayıdır. uint8_t olarak yorumlanırsa negatif ivmeler (-1, -2) ekranda 255, 254 gibi çok büyük pozitif sayılar olarak yanlış görünür.Full-scale ±2 g ile ±16 g arasında pratikte ne fark eder?Cevap: 8-bit çözünürlük sabit olduğu için (256 kademe); $\pm 2\text{ g}$ seçildiğinde küçük hareketlerde daha hassas ölçüm (LBS başına daha düşük mg) alınır ancak sert hareketlerde sensör satüre olur (doyuma ulaşır). $\pm 16\text{ g}$ seçildiğinde çok sert sarsıntılar ölçülebilir ancak küçük hareketlerin detayı kaybolur.Aynı I2C bus’ta SHT40 (0x44) ve LIS2DE12 (0x18) birlikte durabilir mi? Neden?Cevap: Evet, sorunsuz durabilirler. I2C protokolünde her haberleşme bir 7-bit slave adresi çağrısı ile başlar. İşlemci hangi adresi seslendirirse sadece o entegre yanıt verir; adresleri farklı olduğu için hatta çakışma yaşanmaz.STATUS register’daki “data ready” biti olmasa sürekli okursan ne olur?Cevap: ODR hızından daha hızlı döngüde sürekli okuma yapılırsa, aynı ivme verisi ekrana mükerrer (üst üste aynısı) basılır; ayrıca gereksiz I2C trafiği yaratılmış ve işlemci boş yere yorulmuş olur.
