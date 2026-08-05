@@ -18,29 +18,29 @@
 
 ## Teorik sorular
 
-*1* İvmeölçer ne ölçer? Kart düz ve sabitken neden bir eksen ≈ ±1 g civarında görünür?
+*1.* İvmeölçer ne ölçer? Kart düz ve sabitken neden bir eksen ≈ ±1 g civarında görünür?
 - İvmeölçer, cisme binen eylemsizlik kuvvetlerini ölçer. 
 - Kart düz ve sabitken bile yerçekimi kuvveti 1g sensörün z ekseni üzerinde sürekli bir ivme etkisi yarattığı için o eksen ±1 g civarında okunur.
 
-*2* LIS2DE12’nin tipik 7-bit I2C adresleri nelerdir? SA0 / SDO neden iki adres üretir?
+*2.* LIS2DE12’nin tipik 7-bit I2C adresleri nelerdir? SA0 / SDO neden iki adres üretir?
 - Tipik 7-bit adresler `0x18` veya `0x19`'dur. 
 - SA0 (SDO) pini, I2C adresini LSB belirler. bu pinin lojik yüksek veya düşük çekilmesi iki farklı adres üretmesini sağlar.
 
-*3* WHO_AM_I register’ı ne işe yarar? Beklenen değer nedir?
+*3.* WHO_AM_I register’ı ne işe yarar? Beklenen değer nedir?
 - Entegrenin çip modelini doğrulayan bir register'dır.
 - Beklenen değer `0x33`'tür.
 
 *4* Power-up sonrası sadece OUT_X okumak neden çoğu zaman yetmez? CTRL / ODR’nin rolü nedir?
 - Enerji verildiğinde sensör varsayılan olarak power-down modunda başlar. `CTRL` register'ı ve ODR ayarları yapılmadan iç clock ve ADC devreleri çalışmayacağı için sürekli `0` okunur.
 
-*5* OUT_* değerini uint8_t yerine int8_t olarak yorumlamak neden önemli?
+*5.* OUT_* değerini uint8_t yerine int8_t olarak yorumlamak neden önemli?
 - İvmeölçer verileri hem pozitif hem negatif yönlü ivmeleri belirtir. Bu yüzden veriler ikiye tümleyen işaretli formatta yorumlanır.
 
-*6* Full-scale ±2 g ile ±16 g arasında pratikte ne fark eder?
+*6.* Full-scale ±2 g ile ±16 g arasında pratikte ne fark eder?
 - ±2 g seçildiğinde resolution çok yüksek olur ancak düşük ivme sınırlarında bile saturationa ulaşır. ±16 g ise yüksek hızlı veya şiddetli shakeleri ölçmeye yarar ancak resolution azalır.
 
-*7* Aynı I2C bus’ta SHT40 (0x44) ve LIS2DE12 (0x18) birlikte durabilir mi? Neden?
+*7.* Aynı I2C bus’ta SHT40 (0x44) ve LIS2DE12 (0x18) birlikte durabilir mi? Neden?
 - Evet, durabilir. İki cihazın I2C adresleri tamamen farklıdır ve bu sayede Master aynı bus üzerinden adres belirterek her iki cihazla çakışmadan haberleşebilir.
 
-*8* STATUS register’daki “data ready” biti olmasa sürekli okursan ne olur? (kısa düşün)
+*8.* STATUS register’daki “data ready” biti olmasa sürekli okursan ne olur? (kısa düşün)
 - Sensör yeni veri üretmeden eski veriyi tekrar okuyabilir.
